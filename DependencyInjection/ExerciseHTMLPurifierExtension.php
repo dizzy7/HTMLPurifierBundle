@@ -41,11 +41,11 @@ class ExerciseHTMLPurifierExtension extends Extension
 
             if ('default' === $name) {
                 $configDefinition
-                    ->setFactoryMethod('create')
+                    ->setFactory(['%exercise_html_purifier.config.class%', 'create'])
                     ->addArgument($config);
             } else {
                 $configDefinition
-                    ->setFactoryMethod('inherit')
+                    ->setFactory(['%exercise_html_purifier.config.class%', 'inherit'])
                     ->addArgument(new Reference('exercise_html_purifier.config.default'))
                     ->addMethodCall('loadArray', array($config));
             }
