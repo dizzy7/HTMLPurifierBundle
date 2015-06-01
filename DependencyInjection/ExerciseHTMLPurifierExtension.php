@@ -37,7 +37,6 @@ class ExerciseHTMLPurifierExtension extends Extension
 
         foreach ($configs as $name => $config) {
             $configDefinition = new Definition('%exercise_html_purifier.config.class%');
-            $configDefinition->setFactoryClass('%exercise_html_purifier.config.class%');
 
             if ('default' === $name) {
                 $configDefinition
